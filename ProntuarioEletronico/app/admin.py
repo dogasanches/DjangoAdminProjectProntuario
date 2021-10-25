@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Consulta, Paciente
-
+from daterange_filter.filter import DateRangeFilter
 #from .models import *
 
 # Register your models here.
@@ -12,7 +12,9 @@ from .models import Consulta, Paciente
 class ConsultaAdmin (admin.ModelAdmin):
     list_display = ("Paciente",'sintomas','tipo','especialidade','dataconsulta','arquivo1','arquivo2','arquivo3',)
     search_fields = ("sintomas",)
-    list_filter = ('dataconsulta',)
+    list_filter = (
+        ('dataconsulta',DateRangeFilter),
+    )
     date_hierarch = ('dataconsulta')
 
 @admin.register(Paciente)
