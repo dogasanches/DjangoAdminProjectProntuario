@@ -10,9 +10,9 @@ from .models import Consulta, Paciente
 
 @admin.register(Consulta)
 class ConsultaAdmin (admin.ModelAdmin):
-    list_display = ("Paciente",'sintomas','tipo','especialidade','dataconsulta','evolucao_tratamento','arquivo1','arquivo2','arquivo3','arquivo4','arquivo5','arquivo6','arquivo7',)
-    search_fields = ("sintomas",'dataconsulta','especialidade','tipo',)
-    list_filter = ('Paciente','dataconsulta','tipo','especialidade')
+    list_display = ("Paciente",'tipo','sintomas','especialidade','medico','dataconsulta','evolucao_tratamento','medicamento','arquivo1','arquivo2','arquivo3','arquivo4','arquivo5','arquivo6','arquivo7',)
+    search_fields = ("sintomas",'dataconsulta','especialidade','medico','tipo','medicamento')
+    list_filter = ('Paciente',"sintomas",'dataconsulta','tipo','especialidade','medico','medicamento')
     date_hierarch = ('dataconsulta')
 
 @admin.register(Paciente)
