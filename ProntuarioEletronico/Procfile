@@ -1,0 +1,1 @@
+web: gunicorn ProntuarioEletronico.wsgi --log-file -
